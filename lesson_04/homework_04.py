@@ -1,4 +1,4 @@
-adwentures_of_tom_sawer = """\
+adventures_of_tom_sawyer = """\
 Tom gave up the brush with reluctance in his .... face but alacrity
 in his heart. And while
 the late steamer
@@ -19,77 +19,73 @@ hour after hour. And when the middle of the afternoon came, from being a
 poor poverty, stricken boy in the .... morning, Tom was literally
 rolling in wealth."""
 
-##  ПЕРЕЗАПИСУЙТЕ зміст змінної adwentures_of_tom_sawer у завданнях 1-3
+##  ПЕРЕЗАПИСУЙТЕ зміст змінної adventures_of_tom_sawyer у завданнях 1-3
 # task 01 ==
 """ Дані у строці adwentures_of_tom_sawer розбиті випадковим чином, через помилку.
 треба замінити кінець абзацу на пробіл .replace("\n", " ")"""
-
-replacement_one = adwentures_of_tom_sawer.replace("\n", " ")
-print(replacement_one)
+adventures_of_tom_sawyer = adventures_of_tom_sawyer.replace("\n", " ")
+print(adventures_of_tom_sawyer)
 
 # task 02 ==
 """ Замініть .... на пробіл
 """
-replacement_two = replacement_one.replace("....", " ")
-print(replacement_two)
+adventures_of_tom_sawyer = adventures_of_tom_sawyer.replace("....", " ")
+print(adventures_of_tom_sawyer)
 
 # task 03 ==
 """ Зробіть так, щоб у тексті було не більше одного пробілу між словами.
 """
-replacement_three = replacement_two.replace("  ", " ")
-print(replacement_three)
+adventures_of_tom_sawyer = " ".join(adventures_of_tom_sawyer.split())
+print(adventures_of_tom_sawyer)
 
 # task 04
 """ Виведіть, скількі разів у тексті зустрічається літера "h"
 """
-counting = adwentures_of_tom_sawer.count('h')
-print(f"Кількість символів h в рядку: {counting}")
+adventures_of_tom_sawyer_count = adventures_of_tom_sawyer.count('h')
+print(f'Кількість літер h у тексті: {adventures_of_tom_sawyer_count}')
 
 # task 05
 """ Виведіть, скільки слів у тексті починається з Великої літери?
 """
-list_adwentures = adwentures_of_tom_sawer.split()
-capital_letter_counter = sum(1 for i in list_adwentures if i and i[0].isupper())
-print(capital_letter_counter)
+adventures_of_tom_sawyer_list = adventures_of_tom_sawyer.split()
+capital_letter_counter = sum(1 for i in adventures_of_tom_sawyer_list if i and i[0].isupper())
+print(f'Кількість слів у тексті з великої літери: {capital_letter_counter}')
 
 # task 06
 """ Виведіть позицію, на якій слово Tom зустрічається вдруге
 """
-split_string = adwentures_of_tom_sawer.split()
-i = split_string.index('Tom', 85)
-print(f'Позиція, на якій слово Tom зустрічається вдруге: {i}')
+adventures_of_tom_sawyer_index = adventures_of_tom_sawyer.find("Tom", adventures_of_tom_sawyer.find("Tom") + 1)
+print(f'Позиція на якій слово Tom зустрічається вдруге: {adventures_of_tom_sawyer_index}')
 
 # task 07
-""" Розділіть змінну adwentures_of_tom_sawer по кінцю речення.
-Збережіть результат у змінній adwentures_of_tom_sawer_sentences
+""" Розділіть змінну adventures_of_tom_sawyer по кінцю речення.
+Збережіть результат у змінній adventures_of_tom_sawyer_sentences
 """
-adwentures_of_tom_sawer_sentences = adwentures_of_tom_sawer.split('\n')
-print(adwentures_of_tom_sawer_sentences)
+adventures_of_tom_sawyer_sentences = adventures_of_tom_sawyer.split(".")
 
 # task 08
-""" Виведіть четверте речення з adwentures_of_tom_sawer_sentences.
+""" Виведіть четверте речення з adventures_of_tom_sawyer_sentences.
 Перетворіть рядок у нижній регістр.
 """
-adwentures_of_tom_sawer_sentences = adwentures_of_tom_sawer.split('\n')
-lowercase_letters = adwentures_of_tom_sawer_sentences[3].lower()
-print(adwentures_of_tom_sawer_sentences[3])
-print(lowercase_letters)
+print(f'4-те реченя з adventures_of_tom_sawyer_sentences: {(adventures_of_tom_sawyer_sentences[4])}')
+adventures_of_tom_sawyer_sentences_lower = adventures_of_tom_sawyer_sentences[4].lower()
+print(f'4-те реченя з adventures_of_tom_sawyer_sentences в нижньому регістрі: {adventures_of_tom_sawyer_sentences_lower}')
 
 # task 09
 """ Перевірте чи починається якесь речення з "By the time".
 """
-big_letter = adwentures_of_tom_sawer.split('\n')
-for letter in big_letter:
-    if "By the time" in letter:
-        print(f'Match: {letter}')
-else:
-    print('No match')
+string_entry = adventures_of_tom_sawyer.split(".")
+
+for entry in string_entry:
+    entry = entry.strip()
+    if entry.startswith("By the time"):
+        print(f"Речення яке починається з 'By the time': {entry}")
 
 # task 10
-""" Виведіть кількість слів останнього речення з adwentures_of_tom_sawer_sentences.
+""" Виведіть кількість слів останнього речення з adventures_of_tom_sawyer_sentences.
 """
-new_list = adwentures_of_tom_sawer.split('\n')
-last_sentence = new_list[-1]
-words = last_sentence.split()
-words_count = len(words)
-print(f'Кількість слів останнього речення: {words_count}')
+adventures_of_tom_sawyer_sentences = [sentence.strip() for sentence in adventures_of_tom_sawyer_sentences if sentence.strip()]
+last_sentence = adventures_of_tom_sawyer_sentences[-1]
+words_in_last_sentence = last_sentence = last_sentence.split()
+count_words = len(words_in_last_sentence)
+print(f'Кількість слів останього реченя: {count_words}')
